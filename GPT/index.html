@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tournoi - Simple Élimination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <main class="app-shell">
+    <section class="hero card">
+      <div>
+        <p class="eyebrow">Tournoi interactif</p>
+        <h1>Simple élimination</h1>
+        <p class="subtitle">
+          Ajoute une liste de noms, lance le tournoi, puis clique sur le gagnant de chaque match pour le faire avancer au tour suivant.
+        </p>
+      </div>
+      <div class="hero-badges">
+        <span class="badge">Responsive</span>
+        <span class="badge">Sans framework</span>
+        <span class="badge">Multi-fichiers</span>
+      </div>
+    </section>
+
+    <section class="controls card">
+      <div class="controls-head">
+        <div>
+          <h2>Liste des participants</h2>
+          <p>Un nom par ligne. Les doublons sont autorisés, mais mieux vaut les éviter.</p>
+        </div>
+        <button id="exampleBtn" class="btn btn-secondary" type="button">Exemple</button>
+      </div>
+
+      <textarea id="namesInput" spellcheck="false" placeholder="Alex&#10;Lina&#10;Mehdi&#10;Sarah&#10;Noah&#10;Emma&#10;Lucas&#10;Inès"></textarea>
+
+      <div class="controls-actions">
+        <button id="generateBtn" class="btn btn-primary" type="button">Créer le tournoi</button>
+        <button id="resetBtn" class="btn btn-ghost" type="button">Réinitialiser</button>
+      </div>
+
+      <p id="message" class="message">Entre au moins 2 noms pour commencer.</p>
+    </section>
+
+    <section class="summary card">
+      <div class="summary-item">
+        <span class="summary-label">Participants</span>
+        <strong id="participantsCount">0</strong>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Tours</span>
+        <strong id="roundsCount">0</strong>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Statut</span>
+        <strong id="statusText">En attente</strong>
+      </div>
+    </section>
+
+    <section id="bracketWrap" class="bracket-wrap card">
+      <div class="empty-state">
+        <h3>Le tableau apparaîtra ici</h3>
+        <p>Génère le tournoi pour voir les matchs du premier tour, puis clique sur chaque gagnant.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
